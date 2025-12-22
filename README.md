@@ -229,7 +229,7 @@ The agent interacts with the environment using four atomic tools:
 
 We provide the key prompts used in our pipeline to ensure reproducibility.
 
-Prompts for different stages can be found in the `/prompt` folder.
+Prompts for different stages can be found in the `/prompts` folder.
 
 
 
