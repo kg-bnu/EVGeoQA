@@ -5,8 +5,8 @@
 **EVMapQA** is a novel **Geo-Spatial Question Answering (GSQA) benchmark ** designed to evaluate the **purpose-driven exploration capabilities** of Large Language Models (LLMs) within dynamic environments.
 
 While existing GSQA benchmarks predominantly focus on static retrieval tasks, real-world spatial planning is often complex and multi-objective. EVMapQA bridges this gap by introducing a distinct **location-anchored** and **dual-objective** design built upon the Electric Vehicle (EV) charging scenario.
-<div align=center>  <img src="C:\Users\niaoc\AppData\Roaming\Typora\typora-user-images\1766389610108.png" width=50%>  
-
+<div align=center>  <img src="./images/1766389610108.png" width=50%>  
+</div>
 ### Key Features:
 * **Dynamic User Locations:** Unlike random sampling, user coordinates are synthesized using K-Means clustering on population heatmaps to simulate realistic starting points.
 * **Dual-Objective Constraints:** Each query requires the agent to find a target that satisfies two simultaneous demands:
@@ -118,8 +118,8 @@ Below is a sample entry from the **EVMapQA** dataset. Each entry represents a un
 
 ## Framework: Tool-Augmented Geo-Spatial Agent
 
-<div align=center>  <img src="C:\Users\niaoc\AppData\Roaming\Typora\typora-user-images\1766392896989.png" width=95%>  
-
+<div align=center>  <img src="./images/1766392896989.png" width=95%>  
+</div>
 To rigorously evaluate LLMs, we develop a **Tool-Augmented Geo-Spatial Agent Framework**. This framework restricts the agent to partial observability, compelling it to actively explore the environment.
 
 The agent interacts with the environment using four atomic tools:
