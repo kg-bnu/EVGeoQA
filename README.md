@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**EVMapQA** is a novel **Geo-Spatial Question Answering (GSQA) benchmark ** designed to evaluate the **purpose-driven exploration capabilities** of Large Language Models (LLMs) within dynamic environments.
+**EVMapQA** is a novel **Geo-Spatial Question Answering (GSQA) benchmark** designed to evaluate the **purpose-driven exploration capabilities** of Large Language Models (LLMs) within dynamic environments.
 
 While existing GSQA benchmarks predominantly focus on static retrieval tasks, real-world spatial planning is often complex and multi-objective. EVMapQA bridges this gap by introducing a distinct **location-anchored** and **dual-objective** design built upon the Electric Vehicle (EV) charging scenario.
 <div align=center>  <img src="./images/1766389610108.png" width=50%>  
