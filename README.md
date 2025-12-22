@@ -7,12 +7,13 @@
 While existing GSQA benchmarks predominantly focus on static retrieval tasks, real-world spatial planning is often complex and multi-objective. EVMapQA bridges this gap by introducing a distinct **location-anchored** and **dual-objective** design built upon the Electric Vehicle (EV) charging scenario.
 <div align=center>  <img src="./images/1766389610108.png" width=50%>  
 </div>
+
 ### Key Features:
-* **Dynamic User Locations:** Unlike random sampling, user coordinates are synthesized using K-Means clustering on population heatmaps to simulate realistic starting points.
-* **Dual-Objective Constraints:** Each query requires the agent to find a target that satisfies two simultaneous demands:
+- **Dynamic User Locations:** Unlike random sampling, user coordinates are synthesized using K-Means clustering on population heatmaps to simulate realistic starting points.
+- **Dual-Objective Constraints:** Each query requires the agent to find a target that satisfies two simultaneous demands:
     1.  **Charging Necessity:** Finding an available charging station.
     2.  **Co-located Activity:** Ensuring the station is within walking distance of a specific Point of Interest (POI) .
-* **Long-Range Exploration:** The dataset spans varying distances, challenging LLMs to perform multi-step reasoning rather than simple local retrieval.
+- **Long-Range Exploration:** The dataset spans varying distances, challenging LLMs to perform multi-step reasoning rather than simple local retrieval.
 
 ## Dataset Statistics
 
@@ -194,7 +195,7 @@ The agent interacts with the environment using four atomic tools:
        "start_location": [118.292622, 35.189944],
        "distance": "500",
        "direction": "N"
-}
+   }
    ```
 
    output example: 
