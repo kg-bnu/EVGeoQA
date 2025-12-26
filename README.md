@@ -1,10 +1,10 @@
-# EVMapQA: Benchmarking LLMs on Dynamic, Multi-Objective Geo-Spatial Exploration
+# EVGeoQA: Benchmarking LLMs on Dynamic, Multi-Objective Geo-Spatial Exploration
 
 ## Introduction
 
-**EVMapQA** is a novel **Geo-Spatial Question Answering (GSQA) benchmark** designed to evaluate the **purpose-driven exploration capabilities** of Large Language Models (LLMs) within dynamic environments.
+**EVGeoQA** is a novel **Geo-Spatial Question Answering (GSQA) benchmark** designed to evaluate the **purpose-driven exploration capabilities** of Large Language Models (LLMs) within dynamic environments.
 
-While existing GSQA benchmarks predominantly focus on static retrieval tasks, real-world spatial planning is often complex and multi-objective. EVMapQA bridges this gap by introducing a distinct **location-anchored** and **dual-objective** design built upon the Electric Vehicle (EV) charging scenario.
+While existing GSQA benchmarks predominantly focus on static retrieval tasks, real-world spatial planning is often complex and multi-objective. EVGeoQA bridges this gap by introducing a distinct **location-anchored** and **dual-objective** design built upon the Electric Vehicle (EV) charging scenario.
 <div align=center>  <img src="./images/1766389610108.png" width=50%>  
 </div>
 
@@ -29,7 +29,7 @@ The dataset covers three representative Chinese cities—Hangzhou (Provincial Ca
 
 ## Dataset Examples
 
-Below is a sample entry from the **EVMapQA** dataset. Each entry represents a unique query anchored to a specific user location, containing the natural language question, metadata, and a list of ground truth answers.
+Below is a sample entry from the **EVGeoQA** dataset. Each entry represents a unique query anchored to a specific user location, containing the natural language question, metadata, and a list of ground truth answers.
 
 ```json
 {
@@ -117,7 +117,7 @@ Below is a sample entry from the **EVMapQA** dataset. Each entry represents a un
 
 ---
 
-## Framework: Tool-Augmented Geo-Spatial Agent
+## GeoRover Framework: Tool-Augmented Geo-Spatial Agent
 
 <div align=center>  <img src="./images/1766392896989.png" width=95%>  
 </div>
