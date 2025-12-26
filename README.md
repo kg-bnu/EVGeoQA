@@ -93,10 +93,15 @@ Below is a sample entry from the **EVGeoQA** dataset. Each entry represents a un
 ---
 
 * **`Question_id`**: A unique integer identifier for the data sample.
-* **`Question`**: The natural language query reflecting the dual-objective demand (charging + activity). 
+  
+* **`Question`**: The natural language query reflecting the dual-objective demand (charging + activity).
+  
 * **`Question_location`**: Textual description of the user's current administrative address.
-* **`Question_location_coord`**: The specific `[Latitude, Longitude]` coordinates of the user. 
+  
+* **`Question_location_coord`**: The specific `[Latitude, Longitude]` coordinates of the user.
+  
 * **`Question_type`**: Indicates the complexity or template category of the query.
+  
 * **`Question_poi`**: The ground truth POI category slot derived from the user's intent.
 
 ---
@@ -127,7 +132,7 @@ The agent interacts with the environment using four atomic tools:
 
 1. **`SearchStations`**: Retrieves charging stations within a localized 5km radius.
 
-   input example:
+   input format:
 
    ```json
    {
@@ -136,7 +141,7 @@ The agent interacts with the environment using four atomic tools:
    }   
    ```
 
-   output example: 
+   output format: 
 
    ```json
    [   {   'address': '枣园镇枣园小镇西门北50米',     
@@ -156,7 +161,7 @@ The agent interacts with the environment using four atomic tools:
    ```
 
 2. **`SearchPOIs`**: Inspects POIs within a walkable 1km radius of a specific station to verify the secondary activity constraint.
-   input example:
+   input format:
 
    ```json
    {
@@ -165,7 +170,7 @@ The agent interacts with the environment using four atomic tools:
    }
    ```
 
-   output example: 
+   output format: 
 
    ```json
    [   {   'address': '枣园镇枣园小镇西门南三户',
@@ -187,7 +192,7 @@ The agent interacts with the environment using four atomic tools:
    ]
    ```
 3. **`ChangeLocation`**: The core exploration mechanism. It allows the agent to shift its coordinates (North, South, East, West) to expand its search scope when local solutions are insufficient.
-   input example:
+   input format:
 
    ```json
    {
@@ -198,7 +203,7 @@ The agent interacts with the environment using four atomic tools:
    }
    ```
 
-   output example: 
+   output format: 
    
    ```json
    {
@@ -206,7 +211,7 @@ The agent interacts with the environment using four atomic tools:
    }
    ```
 4. **`CalculateDistance`**: Computes accurate navigation distances to optimize travel costs.
-   input example:
+   input format:
 
    ```json
    {
@@ -215,7 +220,7 @@ The agent interacts with the environment using four atomic tools:
        "coord2": [118.292322, 35.187944]
    } 
    ```
-   output example: 
+   output format: 
 
    ```json
    {
