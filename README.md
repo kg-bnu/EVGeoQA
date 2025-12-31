@@ -133,7 +133,7 @@ Below is a sample entry from the **EVGeoQA** dataset. Each entry represents a un
 
 <div align=center>  <img src="./images/1766392896989.png" width=95%>  
 </div>
-To rigorously evaluate LLMs, we develop a **Tool-Augmented Geo-Spatial Agent Framework**. This framework restricts the agent to partial observability, compelling it to actively explore the environment.
+To rigorously evaluate LLMs, we develop a Tool-Augmented Geo-Spatial Agent Framework ———— **GeoRover**. This framework restricts the agent to partial observability, compelling it to actively explore the environment.
 
 The agent interacts with the environment using four atomic tools:
 
