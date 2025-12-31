@@ -237,13 +237,13 @@ The agent interacts with the environment using four atomic tools:
 
 
 
-## Prompt
+## Prompt & Code
 
 We provide the key prompts used in our pipeline to ensure reproducibility.
 
 Prompts for different stages can be found in the `/prompts` folder.
 
-
+Furthermore, the complete source code for our framework will be made publicly available upon the acceptance of the paper.
 
 ## Future Plans
 
