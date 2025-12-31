@@ -122,6 +122,15 @@ Below is a sample entry from the **EVGeoQA** dataset. Each entry represents a un
 
 ---
 
+
+## Dataset Availability
+
+⚠️ **Note:** This work is currently under review. The complete dataset and the associated code repository will be made publicly available upon acceptance of the paper.
+
+In the interim, additional sample instances are available in the `/dataset` directory for reference. These samples illustrate the structure and diversity of the proposed benchmark.
+
+---
+
 ## GeoRover Framework: Tool-Augmented Geo-Spatial Agent
 
 <div align=center>  <img src="./images/1766392896989.png" width=95%>  
@@ -235,12 +244,6 @@ The agent interacts with the environment using four atomic tools:
 We provide the key prompts used in our pipeline to ensure reproducibility.
 
 Prompts for different stages can be found in the `/prompts` folder.
-
-
-
-## Dataset Availability
-
-⚠️ **Note:** This work is currently under review. The complete dataset and the associated code repository will be made publicly available upon acceptance of the paper.
 
 
 
