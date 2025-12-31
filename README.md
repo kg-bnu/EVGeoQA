@@ -147,7 +147,8 @@ The agent interacts with the environment using four atomic tools:
         "coord": [118.292622, 35.189944]
    }   
    ```
-
+   * **`tool_name`**: The unique string identifier for the tool function (e.g., "Search_Stations").
+   * **`coord`**: The center point for the search, represented as a `[Longitude, Latitude]` list.
    output format: 
 
    ```json
@@ -166,7 +167,13 @@ The agent interacts with the environment using four atomic tools:
        }   
    ]
    ```
-
+   * **`address`**: The specific textual address of the charging station.
+   * **`coord`**: The precise coordinates of the found station string format `"Longitude,Latitude"`.
+   * **`station_distance`**: The linear distance from the search center (input coord) to this station (e.g., "9 meters").
+   * **`station_name`**: The official name of the charging station or facility.
+   * **`tag`**: A list of specific attributes or labels associated with the station.
+   * **`type`**: The hierarchical category of the location (e.g., "Service; Category; Sub-category").
+   
 2. **`SearchPOIs`**: Inspects POIs within a walkable 1km radius of a specific station to verify the secondary activity constraint.
    input format:
 
@@ -176,6 +183,8 @@ The agent interacts with the environment using four atomic tools:
        "coord": [118.292622, 35.189944]
    }
    ```
+   * **`tool_name`**: The unique string identifier for the tool function (e.g., "Search_Nearby_POI").
+   * **`coord`**: The reference coordinates (usually the station's location) used to search for nearby POIs.
 
    output format: 
 
@@ -198,6 +207,12 @@ The agent interacts with the environment using four atomic tools:
        },  
    ]
    ```
+   * **`address`**: The specific textual address of the Point of Interest (POI).
+   * **`poi_distance`**: The linear distance from the reference coordinates to this POI.
+   * **`poi_name`**: The name of the POI.
+   * **`tag`**: A list of attributes or tags associated with the POI.
+   * **`type`**: The hierarchical category of the POI (e.g., "Service; Main Type; Sub Type").
+ 
 3. **`ChangeLocation`**: The core exploration mechanism. It allows the agent to shift its coordinates (North, South, East, West) to expand its search scope when local solutions are insufficient.
    input format:
 
@@ -209,7 +224,11 @@ The agent interacts with the environment using four atomic tools:
        "direction": "N"
    }
    ```
-
+   * **`tool_name`**: The unique string identifier for the tool function (e.g., "Change_Current_Location").
+   * **`start_location`**: The agent's current coordinates before moving, in `[Longitude, Latitude]` format.
+   * **`distance`**: The numerical distance to move, specified in meters.
+   * **`direction`**: The cardinal direction for movement. Options: `"N"` (North), `"S"` (South), `"E"` (East), `"W"` (West).
+  
    output format: 
    
    ```json
@@ -217,7 +236,9 @@ The agent interacts with the environment using four atomic tools:
        "new_location": [118.292622, 35.189944]
    }
    ```
-4. **`CalculateDistance`**: Computes accurate navigation distances to optimize travel costs.
+   * **`new_location`**: The calculated new coordinates after the movement, in `[Longitude, Latitude]` format.
+
+4. **`CalculateDistance`**: Computes accurate driving distances to optimize travel costs.
    input format:
 
    ```json
@@ -227,6 +248,10 @@ The agent interacts with the environment using four atomic tools:
        "coord2": [118.292322, 35.187944]
    } 
    ```
+   * **`tool_name`**: The unique string identifier for the tool function (e.g., "Cal_Distance").
+   * **`coord1`**: The starting coordinate point in `[Longitude, Latitude]` format.
+   * **`coord2`**: The destination coordinate point in `[Longitude, Latitude]` format.
+  
    output format: 
 
    ```json
@@ -234,7 +259,7 @@ The agent interacts with the environment using four atomic tools:
     	"distance": "42.1 meters"
    }
    ```
-
+   * **`distance`**: The precise calculated driving distance between the two points (e.g., "42.1 meters").
 
 
 ## Prompt & Code
