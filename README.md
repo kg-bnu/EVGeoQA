@@ -100,7 +100,7 @@ Below is a sample entry from the **EVGeoQA** dataset. Each entry represents a un
   
 * **`Question_location_coord`**: The specific `[Latitude, Longitude]` coordinates of the user.
   
-* **`Question_type`**: Indicates the complexity or template category of the query.
+* **`Question_type`**: Indicates the complexity of the query.
   
 * **`Question_poi`**: The ground truth POI category slot derived from the user's intent.
 
