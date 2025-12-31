@@ -25,13 +25,15 @@ The dataset covers three representative Chinese cities—Hangzhou (Provincial Ca
 | **Qingdao** | 180 | 995 | 23 | 22,885 |
 | **Linyi** | 185 | 997 | 21 | 20,890 |
 
-*Data Source: State Grid Corporation of China & Amap API.* 
+*Data Source: State Grid Corporation of China & Gaode(Amap) API.* 
 
 ## Dataset Examples
 
 Below is a sample entry from the **EVGeoQA** dataset. Each entry represents a unique query anchored to a specific user location, containing the natural language question, metadata, and a list of ground truth answers.
 
+Original Chinese Format：
 ```json
+
 {
     "Question_id": 1, 
     "Question": "我想找一个充电桩，充好电后去吃顿好的，你能帮我推荐一个吗？", 
@@ -87,10 +89,69 @@ Below is a sample entry from the **EVGeoQA** dataset. Each entry represents a un
         }
     ]
 }
-
 ```
 
----
+
+English Translation：
+```json
+{
+    "Question_id": 1, 
+    "Question": "I want to find a charging station and have a good meal at the same time. Can you recommend one for me?", 
+    "Question_location": "Zhouquan Town, Tongxiang City, Jiaxing City, Zhejiang Province", 
+    "Question_location_coord": [30.573871636176943, 120.37401098079212], 
+    "Question_type": "advance", 
+    "Question_poi": "Chinese Restaurant; Restaurant, Dining", 
+    "Answer": [
+        {
+            "Station_id": "B0FFLC00X0", 
+            "Station_name": "State Grid Zhejiang Hangzhou Linping District Century Park Charging Station", 
+            "Station_coord": [30.440093, 120.304083], 
+            "Distance": 16.27918236259536, 
+            "Station_poi_type": "Dining Services; Chinese Restaurant; Specialty/Local Flavor Restaurant", 
+            "Station_poi_name": "Shaxian Delicacies (Urban Harbor Branch)", 
+            "correlation_measure": 0.9270795087435726
+        }, 
+        {
+            "Station_id": "B0FFLC02UF", 
+            "Station_name": "State Grid Zhejiang Hangzhou Linping District Tangqi Lutangli Public Charging Station", 
+            "Station_coord": [30.461952, 120.203856], 
+            "Distance": 20.510277527983952, 
+            "Station_poi_type": "Dining Services; Chinese Restaurant; Chinese Restaurant", 
+            "Station_poi_name": "Lutangwan Courtyard Restaurant", 
+            "correlation_measure": 0.9501898007499954
+        },
+        {
+            "Station_id": "B0HKFO26I5", 
+            "Station_name": "State Grid Zhejiang Hangzhou Linping District Leyingtian Charging Station", 
+            "Station_coord": [30.479174, 120.186197], 
+            "Distance": 20.859448296179416, 
+            "Station_poi_type": "Dining Services; Chinese Restaurant; Zhejiang Cuisine",
+            "Station_poi_name": "Leyingtian Hotel (Xishitang Street Branch)", 
+            "correlation_measure": 0.8955389568369476
+        }, 
+        {
+            "Station_id": "B0GK35UC20", 
+            "Station_name": "State Grid Zhejiang Hangzhou Linping District Tangqi Tangkang AC Public Charging Station", 
+            "Station_coord": [30.446552, 120.161504], 
+            "Distance": 24.80560410247837, 
+            "Station_poi_type": "Dining Services; Chinese Restaurant; Anhui Cuisine", 
+            "Station_poi_name": "Anhui Restaurant", 
+            "correlation_measure": 0.8990619172182166
+        }, 
+        {
+            "Station_id": "B0G17DW09K", 
+            "Station_name": "State Grid Zhejiang Hangzhou Linping District Qiaosi Subdistrict Office Charging Station", 
+            "Station_coord": [30.348815, 120.287265], 
+            "Distance": 26.303926763061174, 
+            "Station_poi_type": "Dining Services; Chinese Restaurant; Hot Pot Restaurant", 
+            "Station_poi_name": "Yeji Chaoshan Beef Hot Pot (Qiaosi Branch)", 
+            "correlation_measure": 0.911545218882879
+        }
+    ]
+}
+
+```
+metadata:
 
 * **`Question_id`**: A unique integer identifier for the data sample.
   
@@ -149,24 +210,50 @@ The agent interacts with the environment using four atomic tools:
    ```
    * **`tool_name`**: The unique string identifier for the tool function (e.g., "Search_Stations").
    * **`coord`**: The center point for the search, represented as a `[Longitude, Latitude]` list.
-   output format: 
+   output format:
 
+   Original Chinese Format Output:
    ```json
-   [   {   'address': '枣园镇枣园小镇西门北50米',     
-           'coord': '118.292746,35.189921',
-           'station_distance': '9 meters',
-           'station_name': '国家电网汽车充电站(山东省临沂市兰山区枣园镇)',
-           'tag': [],
-           'type': '汽车服务;充电站;充电站'},
-       {   'address': '枣园镇枣园小镇西门北50米',
-           'coord': '118.292746,35.189921',
-           'station_distance': '9 meters',
-           'station_name': '国家电网汽车充电站(山东省临沂市兰山区枣园镇)',
-           'tag': [],
-           'type': '汽车服务;充电站;充电站'},
-       }   
+   [
+        {
+            "address": "枣园镇枣园小镇西门北50米",
+            "coord": "118.292746,35.189921",
+            "station_distance": "9 meters",
+            "station_name": "国家电网汽车充电站(山东省临沂市兰山区枣园镇)",
+            "tag": [],
+            "type": "汽车服务;充电站;充电站"
+        },
+        {
+            "address": "枣园镇枣园小镇西门北50米",
+            "coord": "118.292746,35.189921",
+            "station_distance": "9 meters",
+            "station_name": "国家电网汽车充电站(山东省临沂市兰山区枣园镇)",
+            "tag": [],
+            "type": "汽车服务;充电站;充电站"
+        }
    ]
+
    ```
+   English Translation:
+   ```json
+    [   
+        {   "address": "50 meters north of the west gate of Zaoyuan Town, Zaoyuan Town",      
+            "coord": "118.292746,35.189921",
+            "station_distance": "9 meters",
+            "station_name": "State Grid Car Charging Station (Zaoyuan Town, Lanshan District, Linyi City, Shandong Province)",
+            "tag": [],
+            "type": "Automotive Service; Charging Station; Charging Station"
+        },
+        {   "address": "50 meters north of the west gate of Zaoyuan Town, Zaoyuan Town",
+            "coord": "118.292746,35.189921",
+            "station_distance": "9 meters",
+            "station_name": "State Grid Car Charging Station (Zaoyuan Town, Lanshan District, Linyi City, Shandong Province)",
+            "tag": [],
+            "type": "Automotive Service; Charging Station; Charging Station"
+        }
+    ]
+   ```
+   metadata: 
    * **`address`**: The specific textual address of the charging station.
    * **`coord`**: The precise coordinates of the found station string format `"Longitude,Latitude"`.
    * **`station_distance`**: The linear distance from the search center (input coord) to this station (e.g., "9 meters").
@@ -174,7 +261,7 @@ The agent interacts with the environment using four atomic tools:
    * **`tag`**: A list of specific attributes or labels associated with the station.
    * **`type`**: The hierarchical category of the location (e.g., "Service; Category; Sub-category").
    
-2. **`SearchPOIs`**: Inspects POIs within a walkable 1km radius of a specific station to verify the secondary activity constraint.
+3. **`SearchPOIs`**: Inspects POIs within a walkable 1km radius of a specific station to verify the secondary activity constraint.
    input format:
 
    ```json
@@ -185,9 +272,8 @@ The agent interacts with the environment using four atomic tools:
    ```
    * **`tool_name`**: The unique string identifier for the tool function (e.g., "Search_Nearby_POI").
    * **`coord`**: The reference coordinates (usually the station's location) used to search for nearby POIs.
-
-   output format: 
-
+ 
+   Original Chinese Format Output:
    ```json
    [   {   'address': '枣园镇枣园小镇西门南三户',
            'poi_distance': '30 meters',
@@ -207,13 +293,36 @@ The agent interacts with the environment using four atomic tools:
        },  
    ]
    ```
+
+   English Translation:
+   ```json
+   
+    [   {   'address': '3 doors south of the west gate of Zaoyuan Town',
+            'poi_distance': '30 meters',
+            'poi_name': 'Kangle Traditional Chinese Massage (Zaoyuan Town Branch)',
+            'tag': [],
+            'type': 'Life Service; Bath and Massage; Bath and Massage'},
+        {   'address': 'No. 1, West Gate Street, Zaoyuan Town',
+            'poi_distance': '31 meters',
+            'poi_name': 'Huixin Beauty and Health Club (Zaoyuan Town Branch)',
+            'tag': [],
+            'type': 'Life Service; Beauty Salon; Beauty Salon'},
+        {   'address': 'No. 6, South of West Gate, Zaoyuan Town',
+            'poi_distance': '34 meters',
+            'poi_name': 'UCC Dry Cleaning (Zaoyuan Town Branch)',
+            'tag': [],
+            'type': 'Life Service; Laundry; Laundry'
+        },  
+    ]
+   ```
+   metadata: 
    * **`address`**: The specific textual address of the Point of Interest (POI).
    * **`poi_distance`**: The linear distance from the reference coordinates to this POI.
    * **`poi_name`**: The name of the POI.
    * **`tag`**: A list of attributes or tags associated with the POI.
    * **`type`**: The hierarchical category of the POI (e.g., "Service; Main Type; Sub Type").
  
-3. **`ChangeLocation`**: The core exploration mechanism. It allows the agent to shift its coordinates (North, South, East, West) to expand its search scope when local solutions are insufficient.
+4. **`ChangeLocation`**: The core exploration mechanism. It allows the agent to shift its coordinates (North, South, East, West) to expand its search scope when local solutions are insufficient.
    input format:
 
    ```json
@@ -224,6 +333,7 @@ The agent interacts with the environment using four atomic tools:
        "direction": "N"
    }
    ```
+   metadata: 
    * **`tool_name`**: The unique string identifier for the tool function (e.g., "Change_Current_Location").
    * **`start_location`**: The agent's current coordinates before moving, in `[Longitude, Latitude]` format.
    * **`distance`**: The numerical distance to move, specified in meters.
@@ -236,9 +346,10 @@ The agent interacts with the environment using four atomic tools:
        "new_location": [118.292622, 35.189944]
    }
    ```
+   metadata: 
    * **`new_location`**: The calculated new coordinates after the movement, in `[Longitude, Latitude]` format.
 
-4. **`CalculateDistance`**: Computes accurate driving distances to optimize travel costs.
+5. **`CalculateDistance`**: Computes accurate driving distances to optimize travel costs.
    input format:
 
    ```json
@@ -248,6 +359,7 @@ The agent interacts with the environment using four atomic tools:
        "coord2": [118.292322, 35.187944]
    } 
    ```
+   metadata: 
    * **`tool_name`**: The unique string identifier for the tool function (e.g., "Cal_Distance").
    * **`coord1`**: The starting coordinate point in `[Longitude, Latitude]` format.
    * **`coord2`**: The destination coordinate point in `[Longitude, Latitude]` format.
@@ -259,6 +371,7 @@ The agent interacts with the environment using four atomic tools:
     	"distance": "42.1 meters"
    }
    ```
+   metadata: 
    * **`distance`**: The precise calculated driving distance between the two points (e.g., "42.1 meters").
 
 
