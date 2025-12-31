@@ -127,8 +127,6 @@ Below is a sample entry from the **EVGeoQA** dataset. Each entry represents a un
 
 ⚠️ **Note:** This work is currently under review. The complete dataset and the associated code repository will be made publicly available upon acceptance of the paper.
 
-In the interim, additional sample instances are available in the `/dataset` directory for reference. These samples illustrate the structure and diversity of the proposed benchmark.
-
 ---
 
 ## GeoRover Framework: Tool-Augmented Geo-Spatial Agent
