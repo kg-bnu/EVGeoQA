@@ -188,7 +188,7 @@ metadata:
 
 ⚠️ **Note:** This work is currently under review. The complete dataset and the associated code repository will be made publicly available upon acceptance of the paper. 
 
-   For reference, we have provided sample data in the /datasets folder, including charging station details, surrounding POI information, and example QA pairs
+**For reference, we have provided sample data in the /datasets folder, including charging station details, surrounding POI information, and example QA pairs**
 
 ---
 
