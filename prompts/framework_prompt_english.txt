@@ -122,7 +122,7 @@ Tool 4: New coordinates after moving an arbitrary distance (unit: m) from a cert
 Precautions:
 - You can answer the question directly or use tools to assist in obtaining more information.
 - Please fully review the tool calling process in previous rounds and consider the next step: whether to use a tool or answer the question directly.
-- You can only use one tool at a time, and that tool can only be used once. Do not use it repeatedly.
+- You can only use one tool at a time, and the tool can only be used once per time. Do not use it repeatedly.
 - If you need to use a tool, please output a JSON string directly according to the tool's input format, without any other content or analysis.
 - If you believe you have obtained enough information, please directly output the answer to the user's question, also in JSON format. Note: The answer needs to contain at least 3 charging stations, up to 10. No other content or analysis.
 - If the number of charging stations in the answer is less than 3, please continue to call tools to obtain information until at least 3 charging stations are obtained.
