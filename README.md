@@ -21,9 +21,9 @@ The dataset covers three representative Chinese cities—Hangzhou (Provincial Ca
 
 | City | Charging Stations | User Locations | POI Categories | Total QA Pairs |
 | :--- | :--: | :--: | :--: | :--: |
-| **Hangzhou** | 260 | 997 | 25 | 24,925 |
-| **Qingdao** | 180 | 995 | 23 | 22,885 |
-| **Linyi** | 185 | 997 | 21 | 20,890 |
+| **Hangzhou** | 260 | 997 | 25 | 19,940 |
+| **Qingdao** | 180 | 995 | 23 | 14,162 |
+| **Linyi** | 185 | 997 | 21 | 14,416 |
 
 *Data Source: State Grid Corporation of China & Gaode(Amap) API.* 
 
