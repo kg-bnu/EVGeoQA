@@ -186,9 +186,10 @@ metadata:
 
 ## Dataset Availability
 
-⚠️ **Note:** This work is currently under review. The complete dataset and the associated code repository will be made publicly available upon acceptance of the paper. 
+🎉 **Update:** The complete EvGeoQA dataset is now publicly available! 
 
-**For reference, we have provided sample data in the /datasets folder, including charging station details, surrounding POI information, and example QA pairs**
+You can access the full dataset, including charging station details, surrounding POI information, and all QA pairs directly on Hugging Face:
+🤗 **[Hapluckyy/EvGeoQA · Datasets at Hugging Face](https://huggingface.co/datasets/Hapluckyy/EvGeoQA)**
 
 ---
 
