@@ -1,5 +1,10 @@
 # EVGeoQA: Benchmarking LLMs on Dynamic, Multi-Objective Geo-Spatial Exploration
+#### This work has been accepted for publication in ACL-2026 (Findings of ACL) 🎉🎉🎉.
+- [Paper](https://arxiv.org/abs/2604.07070)
 
+- [Datasets](https://huggingface.co/datasets/Hapluckyy/EvGeoQA)
+
+- We will soon be launching [EvGeoQA-Pro](https://github.com/Hapluckyy/EvGeoQA-Pro), the multimodal version of EvGeoQA. Stay tuned!
 ## Introduction
 
 **EVGeoQA** is a novel **Geo-Spatial Question Answering (GSQA) benchmark** designed to evaluate the **purpose-driven exploration capabilities** of Large Language Models (LLMs) within dynamic environments.
