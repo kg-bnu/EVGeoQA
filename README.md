@@ -391,10 +391,8 @@ Prompts for different stages can be found in the `/prompts` folder.
 
 Furthermore, the complete source code for our framework will be made publicly available upon the acceptance of the paper.
 
-## Future Plans
+## Contact Us
+If you have any questions regarding the project's code or dataset, please feel free to contact me at jianfeiwu@mail.bnu.edu.cn or leave an issue!
 
-We are committed to advancing the field of Embodied Spatial Intelligence. Our roadmap includes:
 
-- **Multilingual Support:** We plan to release an **English version** of the EVMapQA dataset to facilitate global research.
-- **Domain Expansion:** We aim to extend the data generation pipeline to cover broader geo-spatial exploration domains beyond EV charging, incorporating more diverse urban topologies and complex constraint types.
-- **Model Optimization:** Investigating domain-specific fine-tuning (SFT) to improve LLM performance on long-horizon spatial planning tasks.
+
